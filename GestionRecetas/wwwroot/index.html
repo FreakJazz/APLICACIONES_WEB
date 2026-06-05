@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Recetas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar navbar-dark bg-danger">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">Gestión de Recetas</span>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <ul class="nav nav-tabs">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="tab" href="#recetas">Recetas</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#ingredientes">Ingredientes</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#crearReceta">Nueva Receta</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="tab" href="#crearIngrediente">Nuevo Ingrediente</a>
+            </li>
+        </ul>
+
+        <div class="tab-content mt-4">
+            <div id="recetas" class="tab-pane fade show active">
+                <h2>Recetas</h2>
+                <div id="listRecetas" class="row"></div>
+            </div>
+
+            <div id="ingredientes" class="tab-pane fade">
+                <h2>Ingredientes</h2>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-danger">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Cantidad</th>
+                                <th>Unidad</th>
+                                <th>Calorías</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tbodyIngredientes"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="crearReceta" class="tab-pane fade">
+                <h2>Nueva Receta</h2>
+                <form id="formReceta" class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nombre" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Dificultad</label>
+                        <select class="form-select" id="dificultad" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="Fácil">Fácil</option>
+                            <option value="Media">Media</option>
+                            <option value="Difícil">Difícil</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Tiempo (minutos)</label>
+                        <input type="number" class="form-control" id="tiempo" required>
+                    </div>
+                    <div class="col-12">
+                        <label class="form-label">Descripción</label>
+                        <textarea class="form-control" id="descripcion" rows="3"></textarea>
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-danger">Crear Receta</button>
+                    </div>
+                </form>
+            </div>
+
+            <div id="crearIngrediente" class="tab-pane fade">
+                <h2>Nuevo Ingrediente</h2>
+                <form id="formIngrediente" class="row g-3">
+                    <div class="col-md-6">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="nomIng" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Cantidad</label>
+                        <input type="number" class="form-control" id="cantIng" step="0.01" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Unidad</label>
+                        <input type="text" class="form-control" id="unidadIng" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label">Calorías (opcional)</label>
+                        <input type="number" class="form-control" id="calIng">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-danger">Crear Ingrediente</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

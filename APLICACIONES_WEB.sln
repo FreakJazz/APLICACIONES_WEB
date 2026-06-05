@@ -4,7 +4,11 @@ VisualStudioVersion = 17.5.2.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DEBER 2", "DEBER 2", "{D1107612-8A22-A049-57F5-B04ECF436646}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClienteCRUD", "DEBER 2\ClienteCRUD.csproj", "{A755B0B3-9F4B-A1DF-C9AA-F6136FCEB2E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ClienteCRUD", "DEBER 2\ClienteCRUD.csproj", "{A755B0B3-9F4B-A1DF-C9AA-F6136FCEB2E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EVALUACION1", "EVALUACION1", "{A74E43C5-C373-4F19-9292-A52B95AA92FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestionRecetas", "GestionRecetas\GestionRecetas.csproj", "{6E7B277A-E2CA-40A8-8BAE-56C7D0CD3D7F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -16,12 +20,17 @@ Global
 		{A755B0B3-9F4B-A1DF-C9AA-F6136FCEB2E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A755B0B3-9F4B-A1DF-C9AA-F6136FCEB2E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A755B0B3-9F4B-A1DF-C9AA-F6136FCEB2E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E7B277A-E2CA-40A8-8BAE-56C7D0CD3D7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E7B277A-E2CA-40A8-8BAE-56C7D0CD3D7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E7B277A-E2CA-40A8-8BAE-56C7D0CD3D7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E7B277A-E2CA-40A8-8BAE-56C7D0CD3D7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A755B0B3-9F4B-A1DF-C9AA-F6136FCEB2E7} = {D1107612-8A22-A049-57F5-B04ECF436646}
+		{6E7B277A-E2CA-40A8-8BAE-56C7D0CD3D7F} = {A74E43C5-C373-4F19-9292-A52B95AA92FC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {413853D2-5F61-4148-9BD3-D405CB7AE15D}

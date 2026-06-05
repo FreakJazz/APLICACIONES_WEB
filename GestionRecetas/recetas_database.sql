@@ -31,7 +31,23 @@ CREATE TABLE RecetaIngredientes (
     UNIQUE KEY uk_receta_ingrediente (receta_id, ingrediente_id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
-CREATE INDEX idx_recetas_nombre ON Recetas(nombre);
-CREATE INDEX idx_ingredientes_nombre ON Ingredientes(nombre);
-CREATE INDEX idx_receta_ingredientes_receta ON RecetaIngredientes(receta_id);
-CREATE INDEX idx_receta_ingredientes_ingrediente ON RecetaIngredientes(ingrediente_id);
+INSERT INTO Recetas (nombre, descripcion, tiempo_preparacion, dificultad) VALUES
+('Pasta Carbonara', 'Pasta carbonara italiana', 20, 'Fácil'),
+('Pollo al Horno', 'Pollo asado con limón', 45, 'Media'),
+('Ensalada César', 'Ensalada fresca', 10, 'Fácil');
+
+INSERT INTO Ingredientes (nombre, cantidad, unidad, calorias) VALUES
+('Pasta', 500, 'gr', 131),
+('Huevo', 3, 'unidad', 155),
+('Jamón Serrano', 200, 'gr', 161),
+('Queso Parmesano', 100, 'gr', 392),
+('Pollo', 1500, 'gr', 165);
+
+INSERT INTO RecetaIngredientes (receta_id, ingrediente_id, cantidad_utilizada) VALUES
+(1, 1, 400),
+(1, 2, 3),
+(1, 3, 150),
+(1, 4, 80),
+(2, 5, 1500),
+(3, 1, 200),
+(3, 4, 50);

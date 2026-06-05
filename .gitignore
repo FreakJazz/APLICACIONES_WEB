@@ -141,3 +141,20 @@ dist
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 .vite/
+
+# C# / .NET
+bin/
+obj/
+.vs/
+.vscode/
+*.user
+*.suo
+*.DotSettings
+*.DotSettings.user
+Migrations/
+*.db
+*.db-shm
+*.db-wal
+packages/
+.idea/
+*.sln.DotSettings

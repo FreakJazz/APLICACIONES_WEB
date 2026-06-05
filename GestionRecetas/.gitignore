@@ -1,0 +1,10 @@
+bin/
+obj/
+.vs/
+.vscode/
+Migrations/
+*.db
+*.db-shm
+*.db-wal
+.env
+node_modules/
