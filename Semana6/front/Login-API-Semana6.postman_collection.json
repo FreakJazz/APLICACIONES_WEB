@@ -1,0 +1,88 @@
+{
+  "info": {
+    "name": "Login API - Semana 6",
+    "description": "Colección de pruebas para la API de autenticación",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Login",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"usuario\": \"admin\",\n  \"contrasena\": \"admin123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/autenticacion/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "autenticacion",
+            "login"
+          ]
+        },
+        "description": "Realiza el login del usuario"
+      },
+      "response": []
+    },
+    {
+      "name": "Verificar Sesión",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/autenticacion/verificar-sesion",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "autenticacion",
+            "verificar-sesion"
+          ]
+        },
+        "description": "Verifica si la sesión es válida"
+      },
+      "response": []
+    },
+    {
+      "name": "Logout",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/autenticacion/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "autenticacion",
+            "logout"
+          ]
+        },
+        "description": "Cierra la sesión del usuario"
+      },
+      "response": []
+    }
+  ]
+}

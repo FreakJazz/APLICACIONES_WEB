@@ -1,0 +1,79 @@
+<div class="contenedor-login">
+  <form [formGroup]="formularioLogin" (ngSubmit)="enviarLogin()" class="formulario">
+    
+    <!-- Título -->
+    <h1>Inicia Sesión</h1>
+
+    <!-- Mensaje de error -->
+    <div *ngIf="mensajeError" class="mensaje-error">
+      {{ mensajeError }}
+    </div>
+
+    <!-- Campo Usuario -->
+    <div class="grupo-formulario">
+      <label for="usuario">
+        Usuario
+        <span class="requerido">*</span>
+      </label>
+      <input
+        type="text"
+        id="usuario"
+        formControlName="usuario"
+        placeholder="Ingresa tu nombre de usuario"
+        [class.campo-invalido]="tieneError('usuario', 'required') || tieneError('usuario', 'minlength')"
+        aria-label="Campo de usuario"
+      />
+      
+      <!-- Validaciones de usuario -->
+      <div *ngIf="tieneError('usuario', 'required')" class="error-validacion">
+        El usuario es requerido
+      </div>
+      <div *ngIf="tieneError('usuario', 'minlength')" class="error-validacion">
+        El usuario debe tener al menos 3 caracteres
+      </div>
+    </div>
+
+    <!-- Campo Contraseña -->
+    <div class="grupo-formulario">
+      <label for="contrasena">
+        Contraseña
+        <span class="requerido">*</span>
+      </label>
+      <input
+        type="password"
+        id="contrasena"
+        formControlName="contrasena"
+        placeholder="Ingresa tu contraseña"
+        [class.campo-invalido]="tieneError('contrasena', 'required') || tieneError('contrasena', 'minlength')"
+        aria-label="Campo de contraseña"
+      />
+      
+      <!-- Validaciones de contraseña -->
+      <div *ngIf="tieneError('contrasena', 'required')" class="error-validacion">
+        La contraseña es requerida
+      </div>
+      <div *ngIf="tieneError('contrasena', 'minlength')" class="error-validacion">
+        La contraseña debe tener al menos 6 caracteres
+      </div>
+    </div>
+
+    <!-- Botón de login -->
+    <button
+      type="submit"
+      class="boton boton-primario"
+      [disabled]="cargando || formularioLogin.invalid"
+      aria-label="Botón para iniciar sesión"
+    >
+      <span *ngIf="!cargando">Iniciar Sesión</span>
+      <span *ngIf="cargando">Cargando...</span>
+    </button>
+
+    <!-- Información de credenciales de prueba -->
+    <div class="info-prueba">
+      <p><strong>Credenciales de prueba:</strong></p>
+      <p>Usuario: <code>admin</code></p>
+      <p>Contraseña: <code>admin123</code></p>
+    </div>
+
+  </form>
+</div>

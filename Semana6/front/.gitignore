@@ -1,0 +1,47 @@
+# Angular
+/dist/
+/node_modules/
+/.angular/
+.angular.cache
+
+# Environment
+environment.prod.ts
+
+# Build
+/out-tsc/
+/tmp/
+
+# Dependencies
+package-lock.json
+yarn.lock
+
+# IDEs and editors
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.sln
+*.swp
+*.sln
+*.user
+*.VC.db
+*.VC.VC.opendb
+
+# Testing
+/coverage/
+/karma-results.xml
+
+# Misc
+/.sass-cache/
+/.vuepress/dist/
+/.cache/
+.DS_Store
+.env
+.env.local
+.env.*.local
+npm-debug.log
+yarn-debug.log
+yarn-error.log

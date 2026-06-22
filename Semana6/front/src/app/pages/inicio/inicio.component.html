@@ -1,0 +1,98 @@
+<div class="pagina-contenedor">
+  
+  <!-- Barra superior con información del usuario -->
+  <div class="barra-superior">
+    <h2>Dashboard</h2>
+    <div class="info-usuario">
+      <span class="nombre-usuario">
+        ¡Bienvenido, <strong>{{ nombreUsuario }}</strong>!
+      </span>
+      <button
+        class="boton boton-secundario boton-logout"
+        (click)="cerrarSesion()"
+        [disabled]="cargandoLogout"
+        aria-label="Botón para cerrar sesión"
+      >
+        <span *ngIf="!cargandoLogout">Cerrar Sesión</span>
+        <span *ngIf="cargandoLogout">Cerrando...</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Contenido principal -->
+  <div class="contenido-principal">
+    
+    <div class="contenedor-contenido">
+      <h1>Página de Inicio</h1>
+      
+      <div class="mensaje-exito">
+        ¡Has iniciado sesión correctamente!
+      </div>
+
+      <!-- Información de la sesión -->
+      <div class="seccion">
+        <h2>Información de tu Sesión</h2>
+        <div class="informacion-sesion">
+          <p>
+            <strong>Usuario:</strong> {{ nombreUsuario }}
+          </p>
+          <p>
+            <strong>Estado:</strong> Autenticado ✓
+          </p>
+          <p>
+            <strong>Almacenamiento:</strong> Tu nombre de usuario está guardado en localStorage de forma segura.
+          </p>
+        </div>
+      </div>
+
+      <!-- Detalles técnicos -->
+      <div class="seccion">
+        <h2>Detalles Técnicos</h2>
+        <div class="detalles">
+          <h3>¿Cómo funciona esta aplicación?</h3>
+          <ul>
+            <li>La sesión se valida mediante <strong>cookies HttpOnly</strong> del servidor</li>
+            <li>El nombre del usuario se almacena en <strong>localStorage</strong> para uso local</li>
+            <li>El interceptor HTTP automáticamente envía las cookies con cada petición</li>
+            <li>Las rutas protegidas requieren autenticación (Guard de Angular)</li>
+            <li>Si la sesión expira (401/403), serás redirigido automáticamente al login</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Funcionalidades -->
+      <div class="seccion">
+        <h2>Funcionalidades Implementadas</h2>
+        <div class="funcionalidades">
+          <div class="funcionalidad">
+            <h3>✓ Login y Logout</h3>
+            <p>Autenticación segura con validación en el backend</p>
+          </div>
+          <div class="funcionalidad">
+            <h3>✓ Protección de Rutas</h3>
+            <p>Solo acceso autenticado a páginas protegidas</p>
+          </div>
+          <div class="funcionalidad">
+            <h3>✓ Gestión de Sesión</h3>
+            <p>Cookies HttpOnly y localStorage para persistencia</p>
+          </div>
+          <div class="funcionalidad">
+            <h3>✓ Interceptores</h3>
+            <p>Manejo automático de credenciales y errores</p>
+          </div>
+          <div class="funcionalidad">
+            <h3>✓ Validación Reactiva</h3>
+            <p>Formularios con validaciones en tiempo real</p>
+          </div>
+          <div class="funcionalidad">
+            <h3>✓ Manejo de Errores</h3>
+            <p>Respuestas HTTP apropiadas y mensajes claros</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
