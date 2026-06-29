@@ -1,0 +1,84 @@
+<div class="crud-page">
+  <div class="page-header">
+    <h1>⚙️ Administrar Plantas</h1>
+    <button class="btn-agregar" (click)="abrirFormularioNuevo()">+ Nueva Planta</button>
+  </div>
+
+  <p *ngIf="mensaje" class="mensaje">{{ mensaje }}</p>
+
+  <!-- Formulario -->
+  <div *ngIf="mostrarFormulario" class="formulario">
+    <h2>{{ modoEdicion ? 'Editar Planta' : 'Nueva Planta' }}</h2>
+
+    <div class="form-grupo">
+      <label for="nombre">Nombre *</label>
+      <input id="nombre" type="text" [(ngModel)]="form.nombre" placeholder="Ej: Rosa Roja" />
+    </div>
+
+    <div class="form-grupo">
+      <label for="tipo">Tipo</label>
+      <select id="tipo" [(ngModel)]="form.tipo" (change)="onTipoChange()">
+        <option value="flor">Flor</option>
+        <option value="suculenta">Suculenta</option>
+        <option value="arbusto">Arbusto</option>
+        <option value="arbol">Árbol</option>
+      </select>
+    </div>
+
+    <div class="form-grupo">
+      <label for="precio">Precio ($)</label>
+      <input id="precio" type="number" [(ngModel)]="form.precio" min="0" step="0.5" />
+    </div>
+
+    <div class="form-grupo">
+      <label for="stock">Stock</label>
+      <input id="stock" type="number" [(ngModel)]="form.stock" min="0" />
+    </div>
+
+    <div class="form-grupo">
+      <label for="descripcion">Descripción</label>
+      <textarea id="descripcion" [(ngModel)]="form.descripcion" rows="3" placeholder="Describe la planta..."></textarea>
+    </div>
+
+    <div class="form-acciones">
+      <button class="btn-guardar" (click)="guardar()">
+        {{ modoEdicion ? 'Actualizar' : 'Guardar' }}
+      </button>
+      <button class="btn-cancelar" (click)="cancelar()">Cancelar</button>
+    </div>
+  </div>
+
+  <!-- Tabla -->
+  <div class="tabla-container">
+    <table>
+      <thead>
+        <tr>
+          <th>Planta</th>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let planta of plantas">
+          <td style="font-size: 22px; text-align:center;">{{ planta.imagen }}</td>
+          <td>{{ planta.nombre }}</td>
+          <td><span class="badge" [class]="'badge-' + planta.tipo">{{ planta.tipo }}</span></td>
+          <td>${{ planta.precio.toFixed(2) }}</td>
+          <td [class]="planta.stock < 15 ? 'stock-bajo' : ''">{{ planta.stock }}</td>
+          <td class="acciones">
+            <button class="btn-editar" (click)="editar(planta)">✏️ Editar</button>
+            <button class="btn-eliminar" (click)="eliminar(planta.id, planta.nombre)">🗑️ Eliminar</button>
+          </td>
+        </tr>
+        <tr *ngIf="plantas.length === 0">
+          <td colspan="6" style="text-align:center; padding: 20px; color: #888;">
+            No hay plantas registradas.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

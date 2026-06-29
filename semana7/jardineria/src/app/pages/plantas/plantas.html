@@ -1,0 +1,60 @@
+<div class="plantas-page">
+  <div class="page-header">
+    <h1>🌱 Catálogo de Plantas</h1>
+    <button class="btn-pdf" (click)="exportarPDF()">📄 Exportar PDF</button>
+  </div>
+
+  <div class="filtros">
+    <label for="buscar" class="sr-only">Buscar planta</label>
+    <input
+      id="buscar"
+      type="text"
+      placeholder="Buscar por nombre..."
+      [(ngModel)]="filtro"
+      style="max-width: 250px;"
+    />
+    <label for="tipo" class="sr-only">Filtrar por tipo</label>
+    <select id="tipo" [(ngModel)]="tipoSeleccionado" style="max-width: 180px;">
+      <option value="">Todos los tipos</option>
+      <option value="flor">Flores</option>
+      <option value="suculenta">Suculentas</option>
+      <option value="arbusto">Arbustos</option>
+      <option value="arbol">Árboles</option>
+    </select>
+    <span class="contador">{{ plantasFiltradas.length }} plantas encontradas</span>
+  </div>
+
+  <div class="tabla-container">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Planta</th>
+          <th>Nombre</th>
+          <th>Tipo</th>
+          <th>Precio</th>
+          <th>Stock</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let planta of plantasFiltradas; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td class="emoji-cell">{{ planta.imagen }}</td>
+          <td>{{ planta.nombre }}</td>
+          <td><span class="badge" [class]="'badge-' + planta.tipo">{{ planta.tipo }}</span></td>
+          <td>${{ planta.precio.toFixed(2) }}</td>
+          <td>
+            <span [class]="planta.stock < 15 ? 'stock-bajo' : 'stock-ok'">{{ planta.stock }}</span>
+          </td>
+          <td class="desc">{{ planta.descripcion }}</td>
+        </tr>
+        <tr *ngIf="plantasFiltradas.length === 0">
+          <td colspan="7" style="text-align: center; padding: 20px; color: #888;">
+            No se encontraron plantas con ese filtro.
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

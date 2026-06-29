@@ -1,0 +1,104 @@
+.inicio {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.hero {
+  background-color: #2d5a27;
+  color: white;
+  text-align: center;
+  padding: 50px 20px;
+  border-radius: 10px;
+  margin-bottom: 30px;
+}
+
+.hero h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #c8e6c9;
+}
+
+.btn-ver {
+  background-color: #81c784;
+  color: #0a2e0e;
+  padding: 10px 24px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.btn-ver:hover {
+  background-color: #a5d6a7;
+}
+
+.categorias {
+  margin-bottom: 30px;
+}
+
+.categorias h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2d5a27;
+  font-size: 22px;
+}
+
+.cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+}
+
+.card-icon {
+  font-size: 40px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.card h3 {
+  color: #2d5a27;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #555;
+}
+
+.info {
+  background-color: white;
+  border: 1px solid #c8e6c9;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+.info h2 {
+  color: #2d5a27;
+  margin-bottom: 15px;
+}
+
+.info ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.info li {
+  font-size: 15px;
+}

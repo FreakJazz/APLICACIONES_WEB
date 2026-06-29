@@ -1,0 +1,13 @@
+.footer {
+  background-color: #2d5a27;
+  color: #c8e6c9;
+  text-align: center;
+  padding: 14px 20px;
+  font-size: 13px;
+}
+
+.footer-sub {
+  margin-top: 4px;
+  font-size: 11px;
+  color: #a5d6a7;
+}
